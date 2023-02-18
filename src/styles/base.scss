@@ -1,0 +1,75 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: black;
+    height: 100%;
+    background-image: url('../../public/img/nyancat.webp');
+    background-size: 20%;
+    background-position: center;
+    font-size: 24px;
+    line-height: 140%;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+        background-size: 50%;
+        font-size: 20px;
+    }
+}
+
+h1 {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 56px; 
+    line-height: 120%;
+    margin-bottom: 24px;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-bottom: 8px;
+    
+    @media screen and (max-width: $breakpoint-tablet) {
+        font-size: 32px;
+    }
+
+}
+
+p {
+    margin-bottom: 16px;
+    line-height: 140%;
+}
+
+button {
+    background-color: #ae1ae8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #8a00b4;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: #fff;
+    }
+}
