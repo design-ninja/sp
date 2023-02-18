@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import hamburgerImage from "public/img/hamburger.png";
+
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +15,7 @@ const HamburgerMenu = () => {
     <div className="hamburger-menu">
       <button onClick={handleToggle} className="hamburger-button">
         <Image
-          src="/img/hamburger.png"
+          src={hamburgerImage}
           alt="Hamburger Menu"
           width={48}
           height={48}
