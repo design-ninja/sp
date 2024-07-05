@@ -109,6 +109,7 @@
 
     let score = 0;
     let highScore = 0;
+    let canScore = true;
     let moveInterval = 1000;
     let timeLeft = 60;
     let gameRunning = false;
@@ -117,6 +118,9 @@
 
     const frog = new Image();
     frog.src = 'frog.png';
+
+    const frogDead = new Image();
+    frogDead.src = 'frog_dead.png';
     const quackSound = new Audio('quack.m4a');
     const bleepSound = new Audio('bleep.mp3');
 
@@ -202,7 +206,8 @@
     }
 
     canvas.addEventListener('click', (e) => {
-      if (!gameRunning) return;
+      if (!gameRunning || !canScore) return; // Check if the game is running and scoring is allowed
+
       const rect = canvas.getBoundingClientRect();
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
@@ -211,6 +216,14 @@
         quackSound.currentTime = 0;
         quackSound.play();
         updateScore();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(frogDead, frogX, frogY, 100, 100); // Assuming you have a frogDead image for visual feedback
+
+        canScore = false; // Disable further scoring
+
+        setTimeout(() => {
+          canScore = true; // Re-enable scoring after 500 milliseconds
+        }, 500);
       }
     });
 
